@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Twoje wyjazdy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" th:href="@{images/icons/favicon.ico}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{vendor/bootstrap/css/bootstrap.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{fonts/font-awesome-4.7.0/css/font-awesome.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{vendor/animate/animate.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{vendor/select2/select2.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{vendor/perfect-scrollbar/perfect-scrollbar.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{css/util.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/main.css}">
+    <!--===============================================================================================-->
+</head>
+<body>
+
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table">
+
+                <div class="row header">
+                    <div class="cell">
+                        Kraj
+                    </div>
+                    <div class="cell">
+                        Miasto
+                    </div>
+                    <div class="cell">
+                        Data wyjazdu
+                    </div>
+                    <div class="cell">
+                        Koszt
+                    </div>
+                    <div class="cell">
+                        Ile osób
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="cell" data-title="Country">
+                        <li th:each="post : ${posts}">
+                            <span th:text="${post.country}"></span>
+                        </li>
+                    </div>
+                    <div class="cell" data-title="City">
+                        <li th:each="post : ${posts}">
+                            <span th:text="${post.city}"></span>
+                        </li>
+                    </div>
+                    <div class="cell" data-title="Date Of Departure">
+                        <li th:each="post : ${posts}">
+                            <span th:text="${post.dateOfDeparture}"></span>
+                        </li>
+                    </div>
+                    <div class="cell" data-title="Costs">
+                        <li th:each="post : ${posts}">
+                            <span th:text="${post.costOfDeparture}"></span>
+                        </li>
+                    </div>
+                    <div class="cell" data-title="How Many Ppl">
+                        <li th:each="post : ${posts}">
+                            <span th:text="${post.howManyPpl}"></span>
+                        </li>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--===============================================================================================-->
+<script th:src="@{vendor/jquery/jquery-3.2.1.min.js}"></script>
+<!--===============================================================================================-->
+<script th:src="@{vendor/bootstrap/js/popper.js}"></script>
+<script th:src="@{vendor/bootstrap/js/bootstrap.min.js}"></script>
+<!--===============================================================================================-->
+<script th:src="@{vendor/select2/select2.min.js}"></script>
+<!--===============================================================================================-->
+<script th:src="@{js/main.js}"></script>
+
+</body>
+</html>
